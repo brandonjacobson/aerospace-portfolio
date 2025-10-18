@@ -47,6 +47,7 @@ export default function Home() {
 
       {/* 4. Projects - default theme returning from dark */}
       <HighlightsSection
+        title="Featured Projects"
         highlights={projects}
         theme="default"
         graphic="grid"

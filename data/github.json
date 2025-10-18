@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Project-Icarus",
+    "description": "Developing quadcopter project focused on testing dynamics, control, and autonomy.",
+    "url": "https://github.com/brandonjacobson/Project-Icarus",
+    "stars": 0,
+    "pushed_at": "2025-10-15T18:40:34Z",
+    "languages_url": "https://api.github.com/repos/brandonjacobson/Project-Icarus/languages",
+    "featured": true
+  },
+  {
+    "name": "aerospace-portfolio",
+    "description": null,
+    "url": "https://github.com/brandonjacobson/aerospace-portfolio",
+    "stars": 0,
+    "pushed_at": "2025-10-17T06:00:38Z",
+    "languages_url": "https://api.github.com/repos/brandonjacobson/aerospace-portfolio/languages",
+    "featured": false
+  },
+  {
+    "name": "brandonjacobson.github.io",
+    "description": "Personal portfolio website built with HTML/CSS — hosted on GitHub Pages.",
+    "url": "https://github.com/brandonjacobson/brandonjacobson.github.io",
+    "stars": 0,
+    "pushed_at": "2025-10-15T18:45:08Z",
+    "languages_url": "https://api.github.com/repos/brandonjacobson/brandonjacobson.github.io/languages",
+    "featured": false
+  }
+]
