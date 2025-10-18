@@ -57,11 +57,11 @@ export default function StyleGuidePage() {
             <p className="text-body text-text leading-relaxed mb-6">
               This is the <strong className="text-accent">default theme</strong> with{' '}
               <code className="px-2 py-1 bg-secondary/50 rounded text-accent text-small">
-                graphic="orbital"
+                graphic=&quot;orbital&quot;
               </code>{' '}
               and{' '}
               <code className="px-2 py-1 bg-secondary/50 rounded text-accent text-small">
-                divide="bottom"
+                divide=&quot;bottom&quot;
               </code>
               . The orbital graphics add visual interest with corner arcs at ultra-low opacity
               (10%), creating a subtle aerospace aesthetic without overwhelming the content.
@@ -125,11 +125,11 @@ export default function StyleGuidePage() {
             <p className="text-body text-text leading-relaxed mb-6">
               This is the <strong className="text-accent">panel theme</strong> with{' '}
               <code className="px-2 py-1 bg-secondary/50 rounded text-accent text-small">
-                graphic="grid"
+                graphic=&quot;grid&quot;
               </code>{' '}
               and{' '}
               <code className="px-2 py-1 bg-secondary/50 rounded text-accent text-small">
-                divide="both"
+                divide=&quot;both&quot;
               </code>
               . The blueprint grid creates a technical, engineering aesthetic with 32px spacing
               at very low opacity (3%) to avoid visual noise.
@@ -206,11 +206,11 @@ export default function StyleGuidePage() {
             <p className="text-body text-text leading-relaxed mb-6">
               This is the <strong className="text-accent">dark theme</strong> with{' '}
               <code className="px-2 py-1 bg-secondary/50 rounded text-accent text-small">
-                graphic="none"
+                graphic=&quot;none&quot;
               </code>{' '}
               and{' '}
               <code className="px-2 py-1 bg-secondary/50 rounded text-accent text-small">
-                divide="top"
+                divide=&quot;top&quot;
               </code>
               . No background graphics ensures maximum readability and focus on the content itself.
               Perfect for contact forms, CTAs, or final sections.

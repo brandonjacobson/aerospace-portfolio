@@ -59,10 +59,10 @@ export default function HeroSection({
         <OrbitalAccent position="bottom-right" size="large" />
       </div>
 
-      {/* Content container with grid centering */}
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid min-h-[100vh] place-items-center py-24">
-          <div className="w-full max-w-[72ch] text-center mx-auto space-y-6">
+      {/* Content container with grid centering - using design tokens */}
+      <div className="container mx-auto">
+        <div className="grid min-h-[100vh] place-items-center py-16 md:py-24">
+          <div className="w-full max-w-[72ch] text-center mx-auto space-y-6 px-4">
             <h1 className="font-display text-display-1 font-bold bg-gradient-to-r from-accent to-white bg-clip-text text-transparent prose-balance animate-fade-in-up">
               {title}
             </h1>
