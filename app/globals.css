@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   CSS VARIABLES & TOKENS
+   ========================================================================== */
+
+:root {
+  /* Section theme variables */
+  --section-bg-default: #000814;
+  --section-fg-default: #e0e0e0;
+
+  --section-bg-panel: #0d1b2a;
+  --section-fg-panel: #e0e0e0;
+
+  --section-bg-dark: #0a1929;
+  --section-fg-dark: #e0e0e0;
+
+  /* Visual separator and grid colors */
+  --rule: rgba(0, 212, 255, 0.2);
+  --gridline: rgba(0, 212, 255, 0.03);
+  --accent: #00d4ff;
+
+  /* Active section colors (updated dynamically) */
+  --section-bg: var(--section-bg-default);
+  --section-fg: var(--section-fg-default);
+}
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000814;
+  color: #e0e0e0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
+}
+
+/* Star animation */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Animation delays for sequential fade-ins */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+  animation-fill-mode: backwards;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+  animation-fill-mode: backwards;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+  animation-fill-mode: backwards;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+/* Centered container with responsive padding */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* md:1.5rem, lg:2rem */
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Measure - optimal reading line length */
+.measure {
+  max-width: 65ch;
+}
+
+/* Prose balance - prevent orphans */
+.prose-balance {
+  text-wrap: balance;
+}
+
+/* Section - default vertical rhythm */
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

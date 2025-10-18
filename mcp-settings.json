@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "node",
+      "args": [
+        "C:/Users/Brandon/AppData/Local/Programs/Claude/servers/playwright-mcp/dist/index.js"
+      ]
+    },
+    "superdesign": {
+      "command": "node",
+      "args": [
+        "C:/Users/bjaco/Desktop/aerospace-portfolio/superdesign-mcp-claude-code/dist/index.js"
+      ]
+    }
+  }
+}

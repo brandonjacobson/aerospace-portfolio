@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon A. Jacobson - Engineering Blueprint Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif !important;
+            background: #f8f9fa !important;
+            color: #1a1d29 !important;
+        }
+
+        .blueprint-bg {
+            background-color: #0d47a1;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(255,255,255,.1) 31px, rgba(255,255,255,.1) 32px),
+                repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(255,255,255,.1) 31px, rgba(255,255,255,.1) 32px);
+        }
+
+        .blueprint-text {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .technical-line {
+            height: 1px;
+            background: repeating-linear-gradient(90deg, #333, #333 8px, transparent 8px, transparent 16px);
+        }
+
+        .dimension-marker {
+            position: relative;
+        }
+
+        .dimension-marker::before,
+        .dimension-marker::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #0d47a1;
+            border: 2px solid #1976d2;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .dimension-marker::before { left: -4px; }
+        .dimension-marker::after { right: -4px; }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace !important;
+        }
+
+        .elevation-shadow {
+            box-shadow:
+                0 1px 3px rgba(0,0,0,0.12),
+                0 1px 2px rgba(0,0,0,0.24);
+        }
+
+        .elevation-shadow-lg {
+            box-shadow:
+                0 10px 20px rgba(0,0,0,0.15),
+                0 3px 6px rgba(0,0,0,0.10);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="blueprint-bg min-h-screen flex items-center justify-center px-8 py-32">
+        <div class="max-w-7xl mx-auto">
+            <!-- Title Block (Engineering Drawing Style) -->
+            <div class="bg-white border-4 border-blue-900 p-2 mb-8 max-w-md">
+                <div class="border-2 border-blue-700 p-4">
+                    <div class="grid grid-cols-2 gap-4 mono text-xs">
+                        <div>
+                            <div class="text-gray-500">DRAWING NO.</div>
+                            <div class="font-bold">BAJ-2025-001</div>
+                        </div>
+                        <div>
+                            <div class="text-gray-500">REV.</div>
+                            <div class="font-bold">A</div>
+                        </div>
+                        <div class="col-span-2">
+                            <div class="text-gray-500">SCALE</div>
+                            <div class="font-bold">1:1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-16 border-8 border-blue-900 relative elevation-shadow-lg">
+                <!-- Corner Marks -->
+                <div class="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-blue-700"></div>
+                <div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-blue-700"></div>
+                <div class="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-blue-700"></div>
+                <div class="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-blue-700"></div>
+
+                <!-- Profile Photo as Technical Circle -->
+                <div class="w-32 h-32 mx-auto mb-12 relative">
+                    <div class="w-full h-full rounded-full bg-gray-200 border-4 border-blue-900"></div>
+                    <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 mono text-xs text-gray-600">Ø 128mm</div>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-center tracking-tight text-blue-900">
+                    BRANDON A. JACOBSON
+                </h1>
+
+                <div class="technical-line mb-6"></div>
+
+                <p class="text-xl md:text-2xl text-center text-gray-700 mb-4 font-semibold">
+                    AEROSPACE ENGINEER • COMPUTER SCIENTIST
+                </p>
+
+                <p class="text-sm text-center text-gray-500 mb-12 mono">
+                    UNIVERSITY OF FLORIDA | B.S. AEROSPACE ENGINEERING | GPA: 3.8/4.0
+                </p>
+
+                <p class="text-base text-center text-gray-600 max-w-3xl mx-auto mb-16 leading-relaxed">
+                    Aerospace engineering student specializing in flight control systems, autonomous navigation,
+                    and spacecraft technology. Combining precision mechanical design with advanced software engineering
+                    to build next-generation aerospace solutions.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-12 py-4 bg-blue-900 text-white font-semibold hover:bg-blue-800 transition-all mono text-sm elevation-shadow">
+                        VIEW PROJECTS
+                    </button>
+                    <button class="px-12 py-4 border-3 border-blue-900 text-blue-900 font-semibold hover:bg-blue-900 hover:text-white transition-all mono text-sm elevation-shadow">
+                        DOWNLOAD SPECIFICATIONS
+                    </button>
+                </div>
+            </div>
+
+            <!-- Technical Notes -->
+            <div class="bg-white border-4 border-blue-900 p-6 mt-8 mono text-xs max-w-md">
+                <div class="text-gray-500 mb-2">NOTES:</div>
+                <div class="text-gray-700">
+                    1. ALL DIMENSIONS IN METRIC<br/>
+                    2. MATERIAL: CARBON FIBER COMPOSITE<br/>
+                    3. FINISH: AEROSPACE GRADE
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="px-8 py-32 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-24">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-blue-900 text-white flex items-center justify-center font-bold text-xl">02</div>
+                    <h2 class="text-4xl md:text-6xl font-bold text-blue-900">
+                        TECHNICAL PROJECTS
+                    </h2>
+                </div>
+                <div class="technical-line"></div>
+            </div>
+
+            <div class="grid md:grid-cols-1 gap-12">
+                <!-- Project Icarus -->
+                <div class="border-4 border-gray-300 bg-white p-12 elevation-shadow-lg">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-1">
+                            <div class="aspect-square border-4 border-blue-900 flex items-center justify-center bg-gray-50">
+                                <svg class="w-32 h-32" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="35" stroke="#0d47a1" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                                    <circle cx="30" cy="30" r="8" fill="#1976d2"/>
+                                    <circle cx="70" cy="30" r="8" fill="#1976d2"/>
+                                    <circle cx="30" cy="70" r="8" fill="#1976d2"/>
+                                    <circle cx="70" cy="70" r="8" fill="#1976d2"/>
+                                    <line x1="50" y1="15" x2="50" y2="50" stroke="#0d47a1" stroke-width="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <div class="mono text-xs text-gray-500 mb-2">PROJECT_01 | 2025—PRESENT</div>
+                                    <h3 class="text-3xl font-bold text-blue-900 mb-2">PROJECT ICARUS</h3>
+                                    <p class="text-sm text-gray-600 mono">AUTONOMOUS QUADCOPTER SYSTEM</p>
+                                </div>
+                            </div>
+
+                            <div class="technical-line mb-6"></div>
+
+                            <div class="mb-6">
+                                <p class="text-gray-700 leading-relaxed mb-4">
+                                    Custom PX4-based quadcopter platform designed for advanced flight control research,
+                                    sensor fusion development, and autonomous navigation testing.
+                                </p>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="text-blue-900 mr-2">▸</span>
+                                        <span>Integrated ESCs, power distribution, and Pixhawk flight controller</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-900 mr-2">▸</span>
+                                        <span>Developed C++/Python MAVSDK scripts for autonomous operations</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-900 mr-2">▸</span>
+                                        <span>Implemented Kalman filtering and PID tuning for enhanced stability</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-900 text-xs mono font-medium">PX4</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-900 text-xs mono font-medium">MAVSDK</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-900 text-xs mono font-medium">C++</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-900 text-xs mono font-medium">PYTHON</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-900 text-xs mono font-medium">CONTROL_SYS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STAR Lab -->
+                <div class="border-4 border-gray-300 bg-white p-12 elevation-shadow">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-1">
+                            <div class="aspect-square border-4 border-gray-400 flex items-center justify-center bg-gray-50">
+                                <div class="w-32 h-32 border-4 border-blue-700 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="mono text-xs text-gray-500 mb-2">PROJECT_02 | STAR_LABORATORY</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">SATELLITE PROPULSION ANALYSIS</h3>
+                            <p class="text-sm text-gray-600 mono mb-6">MULTI-MODE LEO RENDEZVOUS SYSTEM</p>
+
+                            <div class="technical-line mb-6"></div>
+
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                Research analyzing linear-switched multi-mode propulsion systems for Low Earth Orbit
+                                rendezvous missions. MATLAB control algorithm testing and solver optimization.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs mono font-medium">MATLAB</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs mono font-medium">ORBITAL_MECH</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs mono font-medium">CONTROL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swamp Launch -->
+                <div class="border-4 border-gray-300 bg-white p-12 elevation-shadow">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-1">
+                            <div class="aspect-square border-4 border-gray-400 flex items-center justify-center bg-gray-50">
+                                <div class="w-40 h-3 bg-blue-700"></div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="mono text-xs text-gray-500 mb-2">PROJECT_03 | SWAMP_LAUNCH</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">AIR-BRAKE CONTROL SYSTEM</h3>
+                            <p class="text-sm text-gray-600 mono mb-6">PRECISION ALTITUDE TARGETING</p>
+
+                            <div class="technical-line mb-6"></div>
+
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                Controls R&D for competition rocket team. Designed mechanical systems achieving
+                                1% altitude accuracy at 10,000 ft target through simulation and CAD optimization.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs mono font-medium">SOLIDWORKS</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs mono font-medium">CAD</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs mono font-medium">SIMULATION</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="px-8 py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-24">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-blue-900 text-white flex items-center justify-center font-bold text-xl">03</div>
+                    <h2 class="text-4xl md:text-6xl font-bold text-blue-900">
+                        CAPABILITIES
+                    </h2>
+                </div>
+                <div class="technical-line"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Programming -->
+                <div class="bg-white border-4 border-gray-300 p-8 elevation-shadow">
+                    <h3 class="text-xl font-bold mb-8 text-blue-900 mono">PROGRAMMING</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>C++</span>
+                                <span class="mono text-gray-500">90%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>Python</span>
+                                <span class="mono text-gray-500">92%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>Java</span>
+                                <span class="mono text-gray-500">85%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>MATLAB</span>
+                                <span class="mono text-gray-500">88%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-white border-4 border-gray-300 p-8 elevation-shadow">
+                    <h3 class="text-xl font-bold mb-8 text-blue-900 mono">AEROSPACE TOOLS</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>PX4</span>
+                                <span class="mono text-gray-500">90%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>MAVSDK</span>
+                                <span class="mono text-gray-500">87%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>SolidWorks</span>
+                                <span class="mono text-gray-500">88%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>Git</span>
+                                <span class="mono text-gray-500">85%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Systems -->
+                <div class="bg-white border-4 border-gray-300 p-8 elevation-shadow">
+                    <h3 class="text-xl font-bold mb-8 text-blue-900 mono">SYSTEMS</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>Control Systems</span>
+                                <span class="mono text-gray-500">90%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>Sensor Fusion</span>
+                                <span class="mono text-gray-500">87%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>CAD Modeling</span>
+                                <span class="mono text-gray-500">85%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>Linux Systems</span>
+                                <span class="mono text-gray-500">82%</span>
+                            </div>
+                            <div class="h-3 bg-gray-200 border-2 border-gray-300">
+                                <div class="h-full bg-blue-900" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="px-8 py-32 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-24">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-blue-900 text-white flex items-center justify-center font-bold text-xl">04</div>
+                    <h2 class="text-4xl md:text-6xl font-bold text-blue-900">
+                        EXPERIENCE
+                    </h2>
+                </div>
+                <div class="technical-line"></div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- STAR Lab -->
+                <div class="border-l-8 border-blue-900 bg-gray-50 p-8 elevation-shadow">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">RESEARCH ASSISTANT</h3>
+                            <p class="text-gray-600 font-semibold">STAR Laboratory — Spacecraft Technology and Research</p>
+                        </div>
+                        <span class="mono text-sm text-gray-500 mt-2 md:mt-0">OCT 2024 — PRESENT</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Analyzed efficacy of linear-switched multi-mode propulsion satellite for Low Earth Orbit
+                        rendezvous. Tested MATLAB closed-loop control algorithms evaluating computational performance
+                        and solver accuracy.
+                    </p>
+                </div>
+
+                <!-- F3 -->
+                <div class="border-l-8 border-gray-400 bg-gray-50 p-8 elevation-shadow">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">TECHNICAL INTERN</h3>
+                            <p class="text-gray-600 font-semibold">F3 International Resources LLC</p>
+                        </div>
+                        <span class="mono text-sm text-gray-500 mt-2 md:mt-0">MAY 2025 — AUG 2025</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Researched emerging technologies for defense and aerospace applications. Collaborated with
+                        international offices providing technical insights for system integration decisions.
+                    </p>
+                </div>
+
+                <!-- SHPE -->
+                <div class="border-l-8 border-gray-400 bg-gray-50 p-8 elevation-shadow">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">CORPORATE PROJECT MANAGER</h3>
+                            <p class="text-gray-600 font-semibold">Society of Hispanic Professional Engineers</p>
+                        </div>
+                        <span class="mono text-sm text-gray-500 mt-2 md:mt-0">SEP 2025 — PRESENT</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Maintain UF SHPE's Corporate Database ensuring current information for nationwide members.
+                        Implement structure improvements enhancing usability for SHPE chapters.
+                    </p>
+                </div>
+
+                <!-- Swamp Launch -->
+                <div class="border-l-8 border-gray-400 bg-gray-50 p-8 elevation-shadow">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">CONTROLS R&D TEAM MEMBER</h3>
+                            <p class="text-gray-600 font-semibold">Swamp Launch Rocket Team</p>
+                        </div>
+                        <span class="mono text-sm text-gray-500 mt-2 md:mt-0">AUG 2023 — AUG 2025</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Designed mechanical systems using CAD and 3D prototyping for payload optimization.
+                        Constructed simulations analyzing air-brake actuation achieving 1% altitude accuracy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="px-8 py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-white border-8 border-blue-900 p-16 text-center elevation-shadow-lg">
+                <div class="flex items-center justify-center gap-4 mb-8">
+                    <div class="w-12 h-12 bg-blue-900 text-white flex items-center justify-center font-bold text-xl">05</div>
+                    <h2 class="text-4xl md:text-6xl font-bold text-blue-900">
+                        CONTACT
+                    </h2>
+                </div>
+
+                <div class="technical-line mb-12"></div>
+
+                <p class="text-gray-700 mb-16 max-w-2xl mx-auto leading-relaxed">
+                    Open to aerospace engineering opportunities, research collaborations, and innovative
+                    projects in flight software and autonomous systems.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="mailto:brandonjacobson0@gmail.com" class="px-12 py-4 bg-blue-900 text-white font-semibold hover:bg-blue-800 transition-all mono text-sm elevation-shadow">
+                        EMAIL
+                    </a>
+                    <a href="https://linkedin.com/in/b-jacobson" class="px-12 py-4 border-3 border-blue-900 text-blue-900 font-semibold hover:bg-blue-900 hover:text-white transition-all mono text-sm elevation-shadow">
+                        LINKEDIN
+                    </a>
+                    <a href="tel:3054098764" class="px-12 py-4 border-3 border-blue-900 text-blue-900 font-semibold hover:bg-blue-900 hover:text-white transition-all mono text-sm elevation-shadow">
+                        (305) 409-8764
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-8 py-16 bg-blue-900 text-center">
+        <div class="max-w-7xl mx-auto">
+            <div class="mono text-xs text-blue-300 mb-4">
+                DRAWING: BAJ-PORTFOLIO-2025 | REV: A | SCALE: 1:1
+            </div>
+            <p class="mono text-sm text-white">
+                © 2025 BRANDON A. JACOBSON • UNIVERSITY OF FLORIDA • AEROSPACE ENGINEERING
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

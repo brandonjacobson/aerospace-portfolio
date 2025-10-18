@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon A. Jacobson - Aerospace Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif !important;
+            background: radial-gradient(ellipse at top, #0f1729 0%, #000000 50%, #000000 100%) !important;
+            color: #ffffff !important;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Starfield */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .star-small {
+            width: 1px;
+            height: 1px;
+            animation: twinkle-slow 4s ease-in-out infinite;
+        }
+
+        .star-medium {
+            width: 2px;
+            height: 2px;
+            animation: twinkle-medium 3s ease-in-out infinite;
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .star-large {
+            width: 3px;
+            height: 3px;
+            animation: twinkle-fast 2s ease-in-out infinite;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes twinkle-slow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes twinkle-medium {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.9; }
+        }
+
+        @keyframes twinkle-fast {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Floating card effect */
+        .float-card {
+            background: rgba(15, 23, 41, 0.6);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .float-card:hover {
+            background: rgba(15, 23, 41, 0.8);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-layer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace !important;
+        }
+
+        /* Nebula glow effect */
+        .nebula-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Minimal accent line */
+        .accent-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Starfield Background -->
+    <div class="stars-container" id="starsContainer"></div>
+
+    <!-- Nebula Glows -->
+    <div class="nebula-glow" style="top: -200px; left: -200px; background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);"></div>
+    <div class="nebula-glow" style="bottom: -300px; right: -250px; background: radial-gradient(circle, rgba(139, 92, 246, 0.25), transparent 70%);"></div>
+
+    <div class="content-layer">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center px-8 py-32">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="w-1 h-1 mx-auto mb-16 rounded-full bg-white opacity-60"></div>
+
+                <h1 class="text-6xl md:text-8xl font-extralight mb-8 tracking-tight">
+                    Brandon A.<br/>Jacobson
+                </h1>
+
+                <div class="accent-line mb-8 max-w-xs mx-auto"></div>
+
+                <p class="text-sm md:text-base text-gray-400 mb-6 font-light tracking-widest uppercase mono">
+                    Aerospace · Computer Science
+                </p>
+
+                <p class="text-sm text-gray-500 mb-20 max-w-xl mx-auto leading-relaxed font-light">
+                    Flight software engineer specializing in autonomous systems and control algorithms
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#work" class="px-12 py-4 float-card text-sm font-light hover:font-normal transition-all">
+                        Explore Work
+                    </a>
+                    <a href="#contact" class="px-12 py-4 float-card text-sm font-light hover:font-normal transition-all">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="px-8 py-32" id="work">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-20">
+                    <p class="text-xs text-gray-600 mb-4 mono tracking-widest">01</p>
+                    <h2 class="text-3xl md:text-5xl font-extralight">
+                        Featured Work
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Project Icarus -->
+                    <div class="float-card p-10">
+                        <div class="aspect-video mb-8 flex items-center justify-center bg-black/20 rounded-2xl">
+                            <svg class="w-24 h-24 opacity-40" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="35" stroke="white" stroke-width="0.5" fill="none"/>
+                                <circle cx="30" cy="30" r="3" fill="white"/>
+                                <circle cx="70" cy="30" r="3" fill="white"/>
+                                <circle cx="30" cy="70" r="3" fill="white"/>
+                                <circle cx="70" cy="70" r="3" fill="white"/>
+                                <line x1="50" y1="15" x2="50" y2="50" stroke="white" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-light mb-3">Project Icarus</h3>
+                        <p class="text-sm text-gray-400 mb-6 font-light leading-relaxed">
+                            PX4 quadcopter platform for autonomous flight research.
+                            C++/Python development with sensor fusion and Kalman filtering.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs text-gray-500 mono font-light">
+                            <span>PX4</span>
+                            <span>•</span>
+                            <span>MAVSDK</span>
+                            <span>•</span>
+                            <span>C++</span>
+                        </div>
+                    </div>
+
+                    <!-- STAR Lab -->
+                    <div class="float-card p-10">
+                        <div class="aspect-video mb-8 flex items-center justify-center bg-black/20 rounded-2xl">
+                            <div class="w-32 h-32 border border-white/20 rounded-full"></div>
+                        </div>
+                        <h3 class="text-2xl font-light mb-3">Satellite Propulsion</h3>
+                        <p class="text-sm text-gray-400 mb-6 font-light leading-relaxed">
+                            STAR Laboratory research on multi-mode propulsion for LEO operations.
+                            MATLAB control algorithms and performance analysis.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs text-gray-500 mono font-light">
+                            <span>MATLAB</span>
+                            <span>•</span>
+                            <span>Orbital Mechanics</span>
+                        </div>
+                    </div>
+
+                    <!-- Swamp Launch -->
+                    <div class="float-card p-10">
+                        <div class="aspect-video mb-8 flex items-center justify-center bg-black/20 rounded-2xl">
+                            <div class="w-40 h-1 bg-white/30 rounded-full"></div>
+                        </div>
+                        <h3 class="text-2xl font-light mb-3">Rocket Control System</h3>
+                        <p class="text-sm text-gray-400 mb-6 font-light leading-relaxed">
+                            Air-brake control achieving 1% altitude precision at 10,000 ft.
+                            CAD design and aerodynamic simulation.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs text-gray-500 mono font-light">
+                            <span>SolidWorks</span>
+                            <span>•</span>
+                            <span>Simulation</span>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder for symmetry -->
+                    <div class="float-card p-10 opacity-40">
+                        <div class="aspect-video mb-8 flex items-center justify-center bg-black/20 rounded-2xl">
+                            <div class="text-4xl font-extralight text-gray-700">+</div>
+                        </div>
+                        <h3 class="text-2xl font-light mb-3">More Projects</h3>
+                        <p class="text-sm text-gray-400 mb-6 font-light leading-relaxed">
+                            Additional aerospace and software engineering projects in development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="px-8 py-32">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-20">
+                    <p class="text-xs text-gray-600 mb-4 mono tracking-widest">02</p>
+                    <h2 class="text-3xl md:text-5xl font-extralight">
+                        Technical Stack
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="float-card p-8">
+                        <p class="text-xs text-gray-600 mb-6 mono tracking-widest">LANGUAGES</p>
+                        <div class="space-y-3 text-sm font-light">
+                            <div>C++</div>
+                            <div>Python</div>
+                            <div>Java</div>
+                            <div>MATLAB</div>
+                        </div>
+                    </div>
+
+                    <div class="float-card p-8">
+                        <p class="text-xs text-gray-600 mb-6 mono tracking-widest">PLATFORMS</p>
+                        <div class="space-y-3 text-sm font-light">
+                            <div>PX4</div>
+                            <div>MAVSDK</div>
+                            <div>ROS</div>
+                            <div>Linux</div>
+                        </div>
+                    </div>
+
+                    <div class="float-card p-8">
+                        <p class="text-xs text-gray-600 mb-6 mono tracking-widest">TOOLS</p>
+                        <div class="space-y-3 text-sm font-light">
+                            <div>SolidWorks</div>
+                            <div>Git</div>
+                            <div>CAD</div>
+                            <div>Arduino</div>
+                        </div>
+                    </div>
+
+                    <div class="float-card p-8">
+                        <p class="text-xs text-gray-600 mb-6 mono tracking-widest">FOCUS</p>
+                        <div class="space-y-3 text-sm font-light">
+                            <div>Control Systems</div>
+                            <div>Sensor Fusion</div>
+                            <div>Flight Software</div>
+                            <div>Autonomy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="px-8 py-32">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-20">
+                    <p class="text-xs text-gray-600 mb-4 mono tracking-widest">03</p>
+                    <h2 class="text-3xl md:text-5xl font-extralight">
+                        Experience
+                    </h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="float-card p-8">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-light mb-1">Research Assistant</h3>
+                                <p class="text-sm text-gray-500">STAR Laboratory</p>
+                            </div>
+                            <span class="text-xs text-gray-600 mono mt-2 md:mt-0">Oct 2024 — Present</span>
+                        </div>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed">
+                            Multi-mode propulsion satellite analysis. MATLAB control algorithms and computational optimization.
+                        </p>
+                    </div>
+
+                    <div class="float-card p-8">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-light mb-1">Technical Intern</h3>
+                                <p class="text-sm text-gray-500">F3 International Resources</p>
+                            </div>
+                            <span class="text-xs text-gray-600 mono mt-2 md:mt-0">May 2025 — Aug 2025</span>
+                        </div>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed">
+                            Defense and aerospace technology research. System integration and technical analysis.
+                        </p>
+                    </div>
+
+                    <div class="float-card p-8">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-light mb-1">Controls R&D</h3>
+                                <p class="text-sm text-gray-500">Swamp Launch Rocket Team</p>
+                            </div>
+                            <span class="text-xs text-gray-600 mono mt-2 md:mt-0">Aug 2023 — Aug 2025</span>
+                        </div>
+                        <p class="text-sm text-gray-400 font-light leading-relaxed">
+                            Air-brake control system achieving 1% altitude accuracy. CAD and simulation work.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="px-8 py-32 mb-32" id="contact">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-20">
+                    <p class="text-xs text-gray-600 mb-4 mono tracking-widest">04</p>
+                    <h2 class="text-3xl md:text-5xl font-extralight mb-8">
+                        Let's Connect
+                    </h2>
+                    <p class="text-sm text-gray-500 font-light">
+                        Open to aerospace opportunities and research collaborations
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:brandonjacobson0@gmail.com" class="px-12 py-4 float-card text-sm font-light hover:font-normal transition-all">
+                        brandonjacobson0@gmail.com
+                    </a>
+                    <a href="https://linkedin.com/in/b-jacobson" class="px-12 py-4 float-card text-sm font-light hover:font-normal transition-all">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="px-8 py-12 text-center">
+            <div class="accent-line mb-8 max-w-xs mx-auto"></div>
+            <p class="text-xs text-gray-700 mono font-light">
+                © 2025 Brandon A. Jacobson
+            </p>
+            <p class="text-xs text-gray-800 mt-2 font-light">
+                University of Florida • Aerospace Engineering
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Generate random stars
+        const starsContainer = document.getElementById('starsContainer');
+        const starCount = 80;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+
+            // Random star size
+            const size = Math.random();
+            if (size < 0.6) {
+                star.classList.add('star-small');
+            } else if (size < 0.9) {
+                star.classList.add('star-medium');
+            } else {
+                star.classList.add('star-large');
+            }
+
+            // Random position
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+
+            // Random animation delay
+            star.style.animationDelay = Math.random() * 4 + 's';
+
+            starsContainer.appendChild(star);
+        }
+    </script>
+
+</body>
+</html>

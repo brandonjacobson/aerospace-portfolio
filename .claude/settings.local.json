@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/bjaco/Downloads/**)",
+      "Bash(node --version:*)",
+      "Bash(npm:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Read(//c/Users/bjaco/Desktop/**)",
+      "Bash(timeout /t 5 /nobreak)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_click",
+      "mcp__superdesign__superdesign_generate",
+      "Bash(mkdir:*)",
+      "mcp__superdesign__superdesign_gallery",
+      "Bash(start \"\" \"C:\\Users\\bjaco\\Desktop\\aerospace-portfolio\\superdesign\\gallery.html\")",
+      "mcp__superdesign__superdesign_iterate",
+      "mcp__playwright__browser_hover",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_resize",
+      "Bash(timeout /t 2)",
+      "Bash(powershell -Command \"(Get-Content ''components\\layout\\SectionHeading.tsx'') -replace ''text-display-1 md:text-display-1'', ''text-display-2'' | Set-Content ''components\\layout\\SectionHeading.tsx''\")",
+      "Bash(powershell -Command \"(Get-Content ''components\\sections\\ExperienceSection.tsx'') -replace ''bg-secondary/50 px-3 py-1.5 rounded-full text-sm border border-accent/50 text-accent font-medium'', ''bg-secondary/50 px-3 py-1.5 rounded-full text-sm border border-accent/50 text-accent font-medium min-h-8 whitespace-nowrap flex items-center justify-center'' | Set-Content ''components\\sections\\ExperienceSection.tsx''\")",
+      "Bash(powershell -Command \"(Get-Content ''components\\sections\\HighlightsSection.tsx'') -replace ''bg-secondary/50 px-3 py-1.5 rounded-full text-sm border border-accent/50 text-accent font-medium'', ''bg-secondary/50 px-3 py-1.5 rounded-full text-sm border border-accent/50 text-accent font-medium min-h-8 whitespace-nowrap flex items-center justify-center'' | Set-Content ''components\\sections\\HighlightsSection.tsx''\")",
+      "Bash(powershell -Command \"(Get-Content ''tailwind.config.ts'') -replace ''''''display-2'''': \\[''''clamp\\(1.75rem, 4vw, 3rem\\)'''', \\{ lineHeight: ''''1.1'''', letterSpacing: ''''-0.015em'''' \\}\\],'', ''''''display-2'''': [''''clamp(1.9rem, 3.5vw, 2.5rem)'''', { lineHeight: ''''1.10'''' }],'' | Set-Content ''tailwind.config.ts''\")",
+      "Bash(powershell -Command \"(Get-Content ''tailwind.config.ts'') -replace ''''''body'''': \\[''''clamp\\(1rem, 0.5vw \\+ 0.875rem, 1.125rem\\)'''', \\{ lineHeight: ''''1.7'''' \\}\\],'', ''''''body'''': [''''clamp(1rem, 1.1vw, 1.125rem)'''', { lineHeight: ''''1.6'''' }],'' | Set-Content ''tailwind.config.ts''\")",
+      "Bash(powershell -Command \"(Get-Content ''components\\Hero.tsx'') -replace ''className=\"\"\"text-display font-bold', 'className=\"\"font-display text-display-1 text-center font-bold' | Set-Content 'componentsHero.tsx ' \")",
+      "Bash(powershell -Command \"(Get-Content ''app\\globals.css'') -replace ''padding-left: 1rem;'', ''padding-left: 1rem; /* md:1.5rem, lg:2rem */'' -replace ''padding-right: 1rem;'', ''padding-right: 1rem;'' -replace ''@media \\(min-width: 768px\\) \\{[\\s\\S]*?padding-left: 1.5rem;[\\s\\S]*?padding-right: 1.5rem;[\\s\\S]*?\\}'', ''@media (min-width: 768px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }'' | Set-Content ''app\\globals.css''\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
